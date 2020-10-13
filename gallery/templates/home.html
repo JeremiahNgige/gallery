@@ -64,16 +64,24 @@
     
                         </div>
                         <div class="modal-footer">
-                            <input id="{{image.id}}.url" class="form-control input-md responsive" type="text"
+                            <input id="myInput" class="form-control input-md responsive" type="text"
                                 value="{{image.image.url}}">
-                            <button class="btn btn-success btn-sm" onclick="copyLink('#{{image.id}}.url')">Copy</button>
+                            <button class="btn btn-success btn-sm" onclick="myFunction()">Copy</button>
                             <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
                         </div>
                     </div>
+
                 </div>
             </div>
             {% endfor %}
         </div>
     </div>
 </section>
+<script>
+    function myFunction() {
+        var copyText = document.getElementById("myInput");
+        copyText.select();
+        document.execCommand("Copy");
+    }
+</script>
 {% endblock content %}
