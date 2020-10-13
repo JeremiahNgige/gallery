@@ -36,32 +36,43 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-md-4 m-2 ">
-                <div class="card p-4 bg-dark">
-                    cards
+        <div class="card-columns">
+            {% for image in images %}
+            <div class="card" data-toggle="modal" data-target="#q{{image.id}}">
+                <img src="{{image.image.url}}" alt="{{image.image_name}}" class="card-img">
+            </div>
+    
+    
+            <!-- Modal -->
+            <div class="modal fade" id="q{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">{{image.image_name}}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img class="card-img-top img-responsive" id="img{{image.id}}" src="{{image.image.url}}"
+                                width="auto" height="auto" alt="Card image cap">
+                            <p class="card-text photo "><strong>Photo description</strong> : {{image.image_description}}.
+                            </p>
+                            <p class="card-text shot"><strong>Shot in</strong> : {{image.location}}</p>
+                            <p class="card-text cate"><strong>Category</strong> : {{image.category}}</p>
+    
+                        </div>
+                        <div class="modal-footer">
+                            <input id="{{image.id}}.url" class="form-control input-md responsive" type="text"
+                                value="{{image.image.url}}">
+                            <button class="btn btn-success btn-sm" onclick="copyLink('#{{image.id}}.url')">Copy</button>
+                            <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4 m-2 ">
-                <div class="card p-4 bg-dark">
-                    cards
-                </div>
-            </div>
-            <div class="col-md-4 m-2 ">
-                <div class="card p-4 bg-dark">
-                    cards
-                </div>
-            </div>
-            <div class="col-md-4 m-2 ">
-                <div class="card p-4 bg-dark">
-                    cards
-                </div>
-            </div>
-            <div class="col-md-4 m-2 ">
-                <div class="card p-4 bg-dark">
-                    cards
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
