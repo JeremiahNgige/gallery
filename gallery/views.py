@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http  import HttpResponse,Http404
 from .models import Category, Image, location
 
@@ -25,7 +25,7 @@ def search_results(request):
 
     else:
         message = "You haven't searched for any category"
-        return render(request, 'all-pics/search.html',{"message":message})
+        return render(request, 'searched.html',{"message":message})
 
 def locate_image(request, location):
     images = Image.filter_by_location(location)

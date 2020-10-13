@@ -29,7 +29,7 @@ body {
 }
 .bg-lower{
     width: 100%;
-    height: 100vh;
+    height: auto;
 }
 .phone{
     background:black;
