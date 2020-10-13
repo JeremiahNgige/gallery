@@ -1,10 +1,11 @@
+
 //top nav color change onScroll
 
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.getElementById("navTop").style.background = "white";
+    document.getElementById("navTop").style.background = "lavender";
     document.getElementById("navTop").style.boxShadow  = "0 8px 6px -6px rgba(0, 0, 0, 0.664)";
     document.getElementById("navTop").style.webkitBoxShadow  = "0 8px 6px -6px rgba(0, 0, 0, 0.603)";
     document.getElementById("navTop").style.mozBoxShadow  = "0 8px 6px -6px rgba(0, 0, 0, 0.678)";
