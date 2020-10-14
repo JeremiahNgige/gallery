@@ -4,4 +4,4 @@
 
 ## Description
 
-![modal view](https://raw.githubusercontent.com/JeremiahNgige/meme-generator/master/imgs/onload.png)
+![modal view](https://raw.githubusercontent.com/JeremiahNgige/gallery/master/gallery/static/imgs/picscreen.png)
