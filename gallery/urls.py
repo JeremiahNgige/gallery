@@ -7,7 +7,7 @@ from django.contrib import admin
 urlpatterns = [
     path('',views.home, name='home'),
     path('search/',views.search_results, name='search_results'),
-    path('location/',views.locate_image, name='locate_image'),
+    path('location/<location>',views.locate_image, name='locate_image'),
     
 ]
 if settings.DEBUG:

@@ -92,14 +92,14 @@ class ImageTestClass(TestCase):
     #set up method
     def setUp(self):
         #creating new category and saving it
-        self.sports = Category(category_name = 'sports')
-        self.sports.save_category()
+        self.nature = Category(category_name = 'nature')
+        self.nature.save_category()
 
         #creating a new location and saving it
         self.new_location = location(location_name = 'Nairobi')
         self.new_location.save_location()
 
-        self.new_image = Image(image = 'img.jpg',image_name = 'lillard',image_description = 'This is a random test description',category = self.sports)
+        self.new_image = Image(image = 'waves.jpg',image_name = 'waves',image_description = 'This is a random test description',category = self.nature)
         self.new_image.save_image()
 
         self.new_image.location.add(self.new_location)
@@ -123,7 +123,7 @@ class ImageTestClass(TestCase):
         tests image delete functionality
         """
         try:
-            image = Image.objects.create(image_name="lillard")
+            image = Image.objects.create(image_name="waves")
             Image.objects.filter(pk=image.pk).delete()
             image.delete_image()
             images = Image.objects.all()
@@ -136,7 +136,7 @@ class ImageTestClass(TestCase):
         """
         tests image update functionality
         """
-        image = Image.objects.create(image_name="lillard")
-        Image.objects.filter(pk=image.pk).update(image_name="kyrie")
+        image = Image.objects.create(image_name="waves")
+        Image.objects.filter(pk=image.pk).update(image_name="vegfeast")
         image.update_image()
-        self.assertEqual(image.image_name, 'kyrie')
+        self.assertEqual(image.image_name, 'vegfeast')

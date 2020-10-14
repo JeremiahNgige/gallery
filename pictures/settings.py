@@ -77,6 +77,7 @@ WSGI_APPLICATION = 'pictures.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+postgres://jhujdppdzsgufc:842193ba4f7032d6c76629673f2063d6e047c5d79c94c013502ca870f96acc2d@ec2-3-215-207-12.compute-1.amazonaws.com:5432/de2muptt2gcv1i
 
 if config('MODE')=="dev":
        DATABASES = {

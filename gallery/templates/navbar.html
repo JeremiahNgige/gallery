@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navTop">
-    <a class="navbar-brand" href="#">Home</a>
+    <a class="navbar-brand" href="{% url 'home' %}">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,17 +9,15 @@
         <li class="nav-item active">
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Categories
-          </a>
-          <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Travel</a>
-            <a class="dropdown-item" href="#">Sport</a>
-            <a class="dropdown-item" href="#">Nature</a>
-            <a class="dropdown-item" href="#">Science</a>
-            <a class="dropdown-item" href="#">Other</a>
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/location/{{location.location_name}}"
+              role="button" aria-haspopup="true" aria-expanded="false">Locations</a>
+          <div class="dropdown-menu">
+              {% for location in locations %}
+              <a class="dropdown-item" href="/location/{{location.location_name}}">{{location.location_name}}</a>
+              {%endfor%}
           </div>
-        </li>
+
+      </li>
       </ul>
     
       <form class="form-inline my-2 my-lg-0 ml-5">
